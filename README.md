@@ -28,18 +28,19 @@ SegmentedButton, FilterChip, Switch). «Отправить» показывае�
 **Авторизация (1.9):** `signInWithEmailAndPassword` /
 `createUserWithEmailAndPassword` через Firebase Auth.
 
-## Настройка Firebase (один раз)
+## Firebase
 
-1. Создайте проект на https://console.firebase.google.com.
-2. **Authentication → Sign-in method → Email/Password → Enable.**
-3. Установите CLI:
-   ```
-   npm install -g firebase-tools
-   dart pub global activate flutterfire_cli
-   firebase login
-   ```
-4. В корне репозитория выполните `flutterfire configure` — команда заменит
-   заглушку `lib/firebase_options.dart` настоящими настройками.
-5. `flutter pub get` → `flutter run` (или `flutter run -d chrome`).
+Приложение подключено к Firebase-проекту `ros2f-427c5` (Android):
+настройки лежат в `lib/firebase_options.dart` и `android/app/google-services.json`.
+В консоли Firebase должен быть включён вход
+**Authentication → Sign-in method → Email/Password**.
 
-Пока Firebase не настроен, приложение показывает экран с подсказкой.
+## Запуск
+
+```
+flutter pub get
+flutter run        # на Android-эмуляторе или телефоне
+```
+
+Firebase настроен только для Android; в браузере и на Windows
+приложение покажет экран с подсказкой.
